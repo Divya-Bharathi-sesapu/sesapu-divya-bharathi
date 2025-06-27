@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Image Gallery</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf0;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    input, button {
+      padding: 0.5rem;
+      margin: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      transition: all 0.3s ease;
+    }
+
+    button {
+      background: #ff9800;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e65100;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+      margin-top: 1rem;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 10px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Image Gallery</h2>
+  <input type="text" id="imgUrl" placeholder="Enter image URL" />
+  <button onclick="addImage()">Add Image</button>
+  <div class="gallery" id="gallery"></div>
+  <br>
+<a href="task-2.html">
+  <button type="button" style="margin-top: 1rem; background: #2196F3;">🏠 Go to Home</button>
+</a>
+
+
+  <script>
+    function addImage() {
+      const url = document.getElementById("imgUrl").value.trim();
+      if (!url) return;
+
+      const img = document.createElement("img");
+      img.src = url;
+      img.alt = "User Image";
+      img.onclick = () => img.remove();
+
+      document.getElementById("gallery").appendChild(img);
+      document.getElementById("imgUrl").value = "";
+    }
+  </script>
+</body>
+</html>

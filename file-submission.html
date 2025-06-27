@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+  </header>
+
+  <div class="form-container">
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <p id="errorMessage" style="color: red;"></p>
+    <p id="successMessage" style="color: green;"></p>
+    <a href="task-2.html">
+  <button type="button" style="margin-top: 1rem; background: #2196F3;">🏠 Go to Home</button>
+</a>
+  </div>
+      
+
+  <script src="script.js"></script>
+</body>
+</html>

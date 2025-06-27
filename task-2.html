@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Web Projects</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      height: calc(100vh - 80px); /* fill remaining height after header */
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 250px;
+      text-align: center;
+      opacity: 0;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      cursor: pointer;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    /* Entry animations */
+    .from-left {
+      animation: fromLeft 1s ease forwards;
+    }
+
+    .from-right {
+      animation: fromRight 1s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    .from-bottom {
+      animation: fromBottom 1s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fromLeft {
+      0% {
+        transform: translateX(-100vw);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fromRight {
+      0% {
+        transform: translateX(100vw);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fromBottom {
+      0% {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to My Web Projects</h1>
+  </header>
+
+  <div class="container">
+    <div class="card from-left">
+      <h2>📞 Contact Me</h2>
+      <p>Upload and validate files with ease.</p>
+      <a href="file-submission.html">Open</a>
+    </div>
+
+    <div class="card from-bottom">
+      <h2>✅ To-Do List</h2>
+      <p>Manage your tasks dynamically.</p>
+      <a href="todo-list.html">Open</a>
+    </div>
+
+    <div class="card from-right">
+      <h2>🖼️ Image Gallery</h2>
+      <p>Add and remove images interactively.</p>
+      <a href="image-gallery.html">Open</a>
+    </div>
+  </div>
+</body>
+</html>
